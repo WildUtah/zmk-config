@@ -24,3 +24,4 @@ include:
     snippet: zmk-usb-logging
   - board: nrfmicro_13
     shield: cosmo_right
+    snippet: zmk-usb-logging
