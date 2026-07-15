@@ -42,7 +42,7 @@
         combo_c {
             key-positions = <8 9>;
             bindings = <&kp PLUS>;
-            //require-prior-idle-ms = <50>;
+            require-prior-idle-ms = <50>;
             timeout-ms = <40>;
             layers = <0>;
         };
