@@ -18,11 +18,13 @@
       tdy: tap_dance_y {
                compatible = "zmk,behavior-tap-dance";
                tapping-term-ms = <200>;
+               #binding-cells = <0>;
                bindings = <&kp Y>, <&kp J>;
            };
       tdu: tap_dance_u {
                compatible = "zmk,behavior-tap-dance";
                tapping-term-ms = <200>;
+               #binding-cells = <0>;
                bindings = <&kp U>, <&kp Q>;
            };
     };
