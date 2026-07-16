@@ -19,11 +19,11 @@
 #
 ---
 include:
-  - board: nrfmicro_13
+  - board: nice_nano_v2
     shield: cosmo_left
     snippet: zmk-usb-logging
-  - board: nrfmicro_13
+  - board: nice_nano_v2
     shield: cosmo_right
     snippet: zmk-usb-logging
-  - board: nrfmicro_13
+  - board: nice_nano_v2
     shield: settings_reset
