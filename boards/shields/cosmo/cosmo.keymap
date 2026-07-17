@@ -12,9 +12,9 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
           };
-      mt: mod_tap {
-        quick-tap-ms = <450>;
-          };
+//      mt: mod_tap {
+//        quick-tap-ms = <450>;
+//          };
       tdy: tap_dance_y {
                compatible = "zmk,behavior-tap-dance";
                tapping-term-ms = <200>;
