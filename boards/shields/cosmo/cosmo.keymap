@@ -39,12 +39,12 @@
                bindings = <&kp PERCENT>, <&kp RS(RA(R))>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
            };
-    //  zero_degrees: zero_but_degree {
-     //          compatible = "zmk,behavior-mod-morph";
-      //         #binding-cells = <0>;
-       //        bindings = <&kp NP_0>, <&kp NP_0>;
-        //       mods = <(MOD_LSFT|MOD_RSFT)>;
-         //  };
+      zero_degrees: zero_but_degree {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp NP_N0>, <&kp RA(0)>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
       separators: normal_or_C {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
@@ -139,7 +139,7 @@
         };
         combo_q {
             key-positions = <8 12>;
-            bindings = <&cent_mil>;
+            bindings = <&permilcent>;
             layers = <0>;
         };
         combo_r {
