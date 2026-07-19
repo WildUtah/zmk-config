@@ -12,9 +12,9 @@
             flavor = "balanced";
             tapping-term-ms = <300>;
           };
-//      mt: mod_tap {
-//        quick-tap-ms = <450>;
-//          };
+      mt: mod_tap {
+        quick-tap-ms = <450>;
+          };
       tdy: tap_dance_y {
                compatible = "zmk,behavior-tap-dance";
                tapping-term-ms = <200>;
@@ -26,6 +26,30 @@
                tapping-term-ms = <200>;
                #binding-cells = <0>;
                bindings = <&kp U>, <&kp Q>;
+           };
+      dashes: en_em_dash {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp MINUS>, <&kp RS(RA(MINUS))>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      permilcent: cent_mil {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp PERCENT>, <&kp RS(RA(R))>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      zero_degrees: zero_but_degree {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp NP_0>, <&kp LA(N0)>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      separators: normal_or_C {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp COMMA>, <&kp SQT>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
            };
     };
 
@@ -65,7 +89,7 @@
         };
         combo_g {
             key-positions = <12 13>;
-            bindings = <&kp MINUS>;
+            bindings = <&dashes>;
             layers = <0>;
         };
         combo_h {
@@ -76,6 +100,111 @@
         combo_i {
             key-positions = <14 15>;
             bindings = <&kp SLASH>;
+            layers = <0>;
+        };
+        combo_j {
+            key-positions = <23 24>;
+            bindings = <&kp QUESTION>;
+            layers = <0>;
+        };
+        combo_k {
+            key-positions = <19 22>;
+            bindings = <&kp UNDERSCORE>;
+            layers = <0>;
+        };
+        combo_l {
+            key-positions = <12 15>;
+            bindings = <&kp RBKT>;
+            layers = <0>;
+        };
+        combo_m {
+            key-positions = <6 9>;
+            bindings = <&kp LBKT>;
+            layers = <0>;
+        };
+        combo_n {
+            key-positions = <7 9>;
+            bindings = <&kp LBRC>;
+            layers = <0>;
+        };
+        combo_o {
+            key-positions = <12 14>;
+            bindings = <&kp RBRC>;
+            layers = <0>;
+        };
+        combo_p {
+            key-positions = <7 13>;
+            bindings = <&kp HASH>;
+            layers = <0>;
+        };
+        combo_q {
+            key-positions = <8 12>;
+            bindings = <&cent_mil>;
+            layers = <0>;
+        };
+        combo_r {
+            key-positions = <0 1>;
+            bindings = <&kp LT>;
+            layers = <0>;
+        };
+        combo_s {
+            key-positions = <4 5>;
+            bindings = <&kp GT>;
+            layers = <0>;
+        };
+        combo_t {
+            key-positions = <18 19>;
+            bindings = <&kp COLON>;
+            layers = <0>;
+        };
+        combo_u {
+            key-positions = <22 23>;
+            bindings = <&kp SEMI>;
+            layers = <0>;
+        };
+        combo_v {
+            key-positions = <1 4>;
+            bindings = <&kp AMPS>;
+            layers = <0>;
+        };
+        combo_w {
+            key-positions = <0 5>;
+            bindings = <&kp PIPE>;
+            layers = <0>;
+        };
+        combo_x {
+            key-positions = <1 5>;
+            bindings = <&kp EXCL>;
+            layers = <0>;
+        };
+        combo_y {
+            key-positions = <0 4>;
+            bindings = <&kp STAR>;
+            layers = <0>;
+        };
+        combo_z {
+            key-positions = <16 25>;
+            bindings = <&kp BSLH>;
+            layers = <0>;
+        };
+        combo_aa {
+            key-positions = <17 24>;
+            bindings = <&kp AT>;
+            layers = <0>;
+        };
+        combo_bb {
+            key-positions = <17 18>;
+            bindings = <&kp DOLLAR>;
+            layers = <0>;
+        };
+        combo_cc {
+            key-positions = <16 17>;
+            bindings = <&kp TILDE>;
+            layers = <0>;
+        };
+        combo_dd {
+            key-positions = <24 25>;
+            bindings = <&kp CARET>;
             layers = <0>;
         };
     };
@@ -96,8 +225,8 @@
             display-name = "numpad";
             bindings = <
                 &kp HOME &kp UP &kp END   &kp KP_N7 &kp KP_N8 &kp KP_N9
-                &trans  &kp LEFT &kp DOWN &kp RIGHT &none &kp KP_DOT &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_COMMA
-                &kp LG(LC(LS(N4))) &kp GLOBE &kp K_APP &kp LG(SPACE) &none &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N3 &none
+                &trans  &kp LEFT &kp DOWN &kp RIGHT &none &kp KP_DOT &kp KP_N4 &kp KP_N5 &kp KP_N6 &separators
+                &kp LG(LC(LS(N4))) &kp GLOBE &kp K_APP &kp LG(SPACE) &none &zero_degrees &kp KP_N1 &kp KP_N2 &kp KP_N3 &none
                 &trans &trans &trans &trans &trans &trans
             >;
         };
