@@ -87,11 +87,6 @@
             bindings = <&kp DQT>;
             layers = <0>;
         };
-        combo_g {
-            key-positions = <12 13>;
-            bindings = <&dashes>;
-            layers = <0>;
-        };
         combo_h {
             key-positions = <13 14>;
             bindings = <&kp RPAR>;
@@ -130,6 +125,11 @@
         combo_o {
             key-positions = <12 14>;
             bindings = <&kp RBRC>;
+            layers = <0>;
+        };
+        combo_g {
+            key-positions = <12 13>;
+            bindings = <&dashes>;
             layers = <0>;
         };
         combo_p {
