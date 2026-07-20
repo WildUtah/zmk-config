@@ -50,7 +50,7 @@
        flavor = "tap-preferred"; 
        tapping-term-ms = <400>;    
        quick-tap-ms = <400>;  
-       bindings = <&kp J>, <&kp Y>;
+       bindings = <&kp J &kp Y>;
      };
       tdu: tap_dance_u {
                compatible = "zmk,behavior-tap-dance";
