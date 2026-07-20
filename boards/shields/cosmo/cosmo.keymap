@@ -38,6 +38,7 @@
       mt: mod_tap {
         quick-tap-ms = <450>;
           };
+          /*
       tdy: tap_dance_y {
                compatible = "zmk,behavior-tap-dance";
                tapping-term-ms = <300>;
@@ -50,6 +51,7 @@
                #binding-cells = <0>;
                bindings = <&kp U>, <&updownu>;
            };
+           */
       updownu:updownu {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
@@ -300,6 +302,16 @@
             bindings = <&bt BT_CLR>;
             layers = <0>;
         };
+        combo_qu {
+            key-positions = <3 5>;
+            bindings = <&qu>;
+            layers = <0>;
+        };
+        combo_jj {
+            key-positions = <0 2>;
+            bindings = <&kp J>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -308,7 +320,7 @@
         default_layer {
             display-name = "base";
             bindings = <
-                &kp W &kp F &kp P   &kp L &tdu &tdy
+                &kp W &kp F &kp P   &kp L &kp U &kp Y
                 &lt 1 A  &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &kp O
                 &kp Z &kp B &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp X
                 &mt LALT ESC &mt LSHIFT BSPC &mt LCTRL SPACE &mt LGUI RET
