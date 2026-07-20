@@ -44,7 +44,6 @@
          //      #binding-cells = <0>;
           //     bindings = <&kp Y>, <&kp J>;
            //};
-          / {
 tdy: tap_dance_y {
        compatible = "zmk,behavior-hold-tap";
 #binding-cells = <0>;
