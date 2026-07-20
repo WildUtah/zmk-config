@@ -38,15 +38,24 @@
       mt: mod_tap {
         quick-tap-ms = <450>;
           };
-      tdy: tap_dance_y {
-               compatible = "zmk,behavior-tap-dance";
-               tapping-term-ms = <400>;
-               #binding-cells = <0>;
-               bindings = <&kp Y>, <&kp J>;
-           };
+      //tdy: tap_dance_y {
+       //        compatible = "zmk,behavior-tap-dance";
+        //       tapping-term-ms = <300>;
+         //      #binding-cells = <0>;
+          //     bindings = <&kp Y>, <&kp J>;
+           //};
+          / {
+tdy: tap_dance_y {
+       compatible = "zmk,behavior-hold-tap";
+#binding-cells = <0>;
+       flavor = "tap-preferred";       // Ensures fast typing doesn't accidentally trigger 'j'
+       tapping-term-ms = <400>;        // Your preferred comfortable double-tap speed
+       quick-tap-ms = <400>;           // CRITICAL: Matches the window to catch a double-tap
+       bindings = <&kp J>, <&kp Y>;    // Notice J is the hold action, Y is the tap action
+     };
       tdu: tap_dance_u {
                compatible = "zmk,behavior-tap-dance";
-               tapping-term-ms = <450>;
+               tapping-term-ms = <300>;
                #binding-cells = <0>;
                bindings = <&kp U>, <&updownu>;
            };
