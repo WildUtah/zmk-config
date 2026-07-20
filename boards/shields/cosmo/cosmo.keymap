@@ -21,9 +21,9 @@
              compatible = "zmk,behavior-macro";
              #binding-cells = <0>;
              bindings
-                 = <&macro_press &kp LSHFT>
+                 = <&macro_press &kp RSHIFT>
                  , <&macro_tap &kp Q >
-                 , <&macro_release &kp LSHFT>
+                 , <&macro_release &kp RSHIFT>
                  , <&macro_tap &kp U>
                  ;
          };
@@ -33,7 +33,7 @@
     behaviors {
       lt: layer_tap {
             flavor = "balanced";
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
           };
       mt: mod_tap {
         quick-tap-ms = <450>;
@@ -56,7 +56,7 @@
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
                bindings = <&qutest>, <&capqu>;
-               mods = <(MOD_LSFT|MOD_RSFT)>;
+               mods = <(MOD_LSFT)>;
             };
       qutest:qutest {
                compatible = "zmk,behavior-mod-morph";
