@@ -7,6 +7,28 @@
 / {
     // Define a default keymap here.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
+    
+    macros {
+      qu:qu {
+             compatible = "zmk,behavior-macro";
+             #binding-cells = <0>;
+             bindings
+                 = <&macro_tap &kp Q &kp U>
+                 ;
+         };
+      capqu:capqu {
+             compatible = "zmk,behavior-macro";
+             #binding-cells = <0>;
+             bindings
+                 = <&macro_press &kp LSHFT>
+                 , <&macro_tap &kp Q >
+                 , <&macro_release &kp LSHFT>
+                 , <&macro_tap &kp U>
+                 ;
+         };
+
+    };
+
     behaviors {
       lt: layer_tap {
             flavor = "balanced";
@@ -17,16 +39,22 @@
           };
       tdy: tap_dance_y {
                compatible = "zmk,behavior-tap-dance";
-               tapping-term-ms = <200>;
+               tapping-term-ms = <400>;
                #binding-cells = <0>;
                bindings = <&kp Y>, <&kp J>;
            };
       tdu: tap_dance_u {
                compatible = "zmk,behavior-tap-dance";
-               tapping-term-ms = <200>;
+               tapping-term-ms = <450>;
                #binding-cells = <0>;
-               bindings = <&kp U>, <&kp Q>;
+               bindings = <&kp U>, <&updownu>;
            };
+      updownu:updownu {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&qu>, <&capqu>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
       dashes: en_em_dash {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
@@ -51,6 +79,60 @@
                bindings = <&kp COMMA>, <&kp SQT>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
            };
+      starmul: twomuls {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp STAR>, <&kp RA(N8)>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      infinity_gt: infinity_gt {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp GT>, <&kp RA(N5)>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      and_section: and_section {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp AMPS>, <&kp RA(N6)>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      twodivides: twodivides {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp SLASH>, <&kp RA(SLASH)>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      almostequal: almostequal {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp EQUAL>, <&kp RA(X)>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      quotebacktick: quotebacktick {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp SQT>, <&kp GRAVE>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      plusminus: plusminus {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp PLUS>, <&kp RS(RA(EQUAL))>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      exclinv: exclinv {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp  EXCL>, <&kp RA(N1)>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      questioninv: questioninv {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp QUESTION>, <&kp RS(RA(SLASH))>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
     };
 
     combos { 
@@ -67,19 +149,19 @@
         };
         combo_c {
             key-positions = <8 9>;
-            bindings = <&kp PLUS>;
+            bindings = <&plusminus>;
             require-prior-idle-ms = <50>;
             timeout-ms = <40>;
             layers = <0>;
         };
         combo_d {
             key-positions = <7 14>;
-            bindings = <&kp SQT>;
+            bindings = <&quotebacktick>;
             layers = <0>;
         };
         combo_e {
             key-positions = <8 13>;
-            bindings = <&kp EQUAL>;
+            bindings = <&almostequal>;
             layers = <0>;
         };
         combo_f {
@@ -94,12 +176,12 @@
         };
         combo_i {
             key-positions = <14 15>;
-            bindings = <&kp SLASH>;
+            bindings = <&twodivides>;
             layers = <0>;
         };
         combo_j {
             key-positions = <23 24>;
-            bindings = <&kp QUESTION>;
+            bindings = <&questioninv>;
             layers = <0>;
         };
         combo_k {
@@ -138,7 +220,7 @@
             layers = <0>;
         };
         combo_q {
-            key-positions = <8 12>;
+            key-positions = <8 14>;
             bindings = <&permilcent>;
             layers = <0>;
         };
@@ -149,7 +231,7 @@
         };
         combo_s {
             key-positions = <4 5>;
-            bindings = <&kp GT>;
+            bindings = <&infinity_gt>;
             layers = <0>;
         };
         combo_t {
@@ -164,7 +246,7 @@
         };
         combo_v {
             key-positions = <1 4>;
-            bindings = <&kp AMPS>;
+            bindings = <&and_section>;
             layers = <0>;
         };
         combo_w {
@@ -174,12 +256,12 @@
         };
         combo_x {
             key-positions = <1 5>;
-            bindings = <&kp EXCL>;
+            bindings = <&exclinv>;
             layers = <0>;
         };
         combo_y {
             key-positions = <0 4>;
-            bindings = <&kp STAR>;
+            bindings = <&starmul>;
             layers = <0>;
         };
         combo_z {
@@ -205,6 +287,16 @@
         combo_dd {
             key-positions = <24 25>;
             bindings = <&kp CARET>;
+            layers = <0>;
+        };
+        combo_btsel {
+            key-positions = <16 17 18 19>;
+            bindings = <&bt BT_NXT>;
+            layers = <0>;
+        };
+        combo_btclr {
+            key-positions = <16 17 18 19 26>;
+            bindings = <&bt BT_CLR>;
             layers = <0>;
         };
     };
