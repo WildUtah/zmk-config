@@ -55,8 +55,14 @@
       updownu:updownu {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
-               bindings = <&qu>, <&capqu>;
+               bindings = <&qutest>, <&capqu>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
+            };
+      qutest:qutest {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&qu>, <&kp Q>;
+               mods = <(MOD_LALT|MOD_RALT)>;
             };
       dashes: en_em_dash {
                compatible = "zmk,behavior-mod-morph";
@@ -134,6 +140,18 @@
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
                bindings = <&kp QUESTION>, <&kp RS(RA(SLASH))>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      commatwiddle: commatwiddle {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp COMMA>, <&kp TILDE>;
+               mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      dotupper: dotupper {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DOT>, <&kp CARET>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
            };
     };
@@ -268,7 +286,7 @@
             layers = <0>;
         };
         combo_z {
-            key-positions = <16 25>;
+            key-positions = <6 15>;
             bindings = <&kp BSLH>;
             layers = <0>;
         };
@@ -304,12 +322,22 @@
         };
         combo_qu {
             key-positions = <3 5>;
-            bindings = <&qu>;
+            bindings = <&updownu>;
             layers = <0>;
         };
         combo_jj {
             key-positions = <0 2>;
             bindings = <&kp J>;
+            layers = <0>;
+        };
+        combo_zz {
+            key-positions = <9 22>;
+            bindings = <&kp Z>;
+            layers = <0>;
+        };
+        combo_xx {
+            key-positions = <12 19>;
+            bindings = <&kp X>;
             layers = <0>;
         };
     };
@@ -322,7 +350,7 @@
             bindings = <
                 &kp W &kp F &kp P   &kp L &kp U &kp Y
                 &lt 1 A  &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &kp O
-                &kp Z &kp B &kp C &kp D &kp V &kp K &kp H &kp COMMA &kp DOT &kp X
+                &kp Z &kp B &kp C &kp D &kp V &kp K &kp H &commatwiddle &dotupper &kp X
                 &mt LALT ESC &mt LSHIFT BSPC &mt LCTRL SPACE &mt LGUI RET
             >;
         };
