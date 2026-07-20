@@ -44,13 +44,13 @@
          //      #binding-cells = <0>;
           //     bindings = <&kp Y>, <&kp J>;
            //};
-tdy: tap_dance_y {
+      tdy: tap_dance_y {
        compatible = "zmk,behavior-hold-tap";
-#binding-cells = <0>;
-       flavor = "tap-preferred";       // Ensures fast typing doesn't accidentally trigger 'j'
-       tapping-term-ms = <400>;        // Your preferred comfortable double-tap speed
-       quick-tap-ms = <400>;           // CRITICAL: Matches the window to catch a double-tap
-       bindings = <&kp J>, <&kp Y>;    // Notice J is the hold action, Y is the tap action
+       #binding-cells = <0>;
+       flavor = "tap-preferred"; 
+       tapping-term-ms = <400>;    
+       quick-tap-ms = <400>;  
+       bindings = <&kp J>, <&kp Y>;
      };
       tdu: tap_dance_u {
                compatible = "zmk,behavior-tap-dance";
