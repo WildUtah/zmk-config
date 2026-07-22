@@ -40,7 +40,7 @@
     behaviors {
       lt: layer_tap {
             flavor = "balanced";
-            tapping-term-ms = <170>;
+            tapping-term-ms = <200>;
           };
       mt: mod_tap {
         quick-tap-ms = <450>;
@@ -375,8 +375,8 @@
             display-name = "numpad";
             bindings = <
                 &kp HOME &kp UP &kp END   &kp KP_N7 &kp KP_N8 &kp KP_N9
-                &trans  &kp LEFT &kp DOWN &kp RIGHT &none &kp KP_DOT &kp KP_N4 &kp KP_N5 &kp KP_N6 &separators
-                &kp LG(LC(LS(N4))) &kp GLOBE &kp K_APP &kp LG(SPACE) &none &zero_degrees &kp KP_N1 &kp KP_N2 &kp KP_N3 &none
+                &trans  &kp LEFT &kp DOWN &kp RIGHT &none &kp KP_DOT &kp KP_N4 &kp KP_N5 &kp KP_N6 &zero_degrees
+                &kp LG(LC(LS(N4))) &kp GLOBE &kp K_APP &kp LG(SPACE) &none &separators &kp KP_N1 &kp KP_N2 &kp KP_N3 &none
                 &trans &trans &trans &trans &trans &trans
             >;
         };
