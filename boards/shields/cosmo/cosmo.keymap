@@ -89,11 +89,17 @@
                bindings = <&kp KP_N0>, <&kp RA(N0)>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
            };
-      separators: normal_or_C {
+      separators: dot_or_comma {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
-               bindings = <&kp COMMA>, <&kp SQT>;
+               bindings = <&aux_separators >, <&kp COMMA>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
+           };
+      aux_separators: normal_or_C {
+               compatible = "zmk,behavior-mod-morph";
+               #binding-cells = <0>;
+               bindings = <&kp DOT >, <&kp SQT>;
+               mods = <(MOD_LALT|MOD_RALT)>;
            };
       starmul: twomuls {
                compatible = "zmk,behavior-mod-morph";
@@ -240,6 +246,8 @@
         combo_g {
             key-positions = <12 13>;
             bindings = <&dashes>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <35>;
             layers = <0>;
         };
         combo_p {
@@ -323,12 +331,17 @@
             layers = <0>;
         };
         combo_btsel {
-            key-positions = <16 17 18 19>;
+            key-positions = <17 18 19 20>;
             bindings = <&bt BT_NXT>;
             layers = <0>;
         };
+        combo_btzero {
+            key-positions = <16 17 18 19>;
+            bindings = <&bt BT_SEL 0>;
+            layers = <0>;
+        };
         combo_btclr {
-            key-positions = <16 17 18 19 26>;
+            key-positions = <22 23 24 25>;
             bindings = <&bt BT_CLR>;
             layers = <0>;
         };
@@ -357,8 +370,18 @@
             bindings = <&kp K>;
             layers = <0>;
         };
-        combo_xx {
+        combo_vv {
             key-positions = <1 2>;
+            bindings = <&kp V>;
+            layers = <0>;
+        };
+        combo_kkk {
+            key-positions = <12 22>;
+            bindings = <&kp K>;
+            layers = <0>;
+        };
+        combo_vvv {
+            key-positions = <9 19>;
             bindings = <&kp V>;
             layers = <0>;
         };
@@ -385,7 +408,7 @@
             display-name = "numpad";
             bindings = <
                 &kp HOME &kp UP &kp END   &kp KP_N7 &kp KP_N8 &kp KP_N9
-                &trans  &kp LEFT &kp DOWN &kp RIGHT &kp LG(LC(LS(N4))) &kp KP_DOT &kp KP_N4 &kp KP_N5 &kp KP_N6 &zero_degrees
+                &trans  &kp LEFT &kp DOWN &kp RIGHT &kp LG(LC(LS(N4))) &separators &kp KP_N4 &kp KP_N5 &kp KP_N6 &zero_degrees
                 &kp LG(LC(LS(N4))) &kp RG(RC(SPACE)) &kp K_APP &kp LG(SPACE) &none &separators &kp KP_N1 &kp KP_N2 &kp KP_N3 &none
                 &trans &trans &trans &trans &trans &trans
             >;
