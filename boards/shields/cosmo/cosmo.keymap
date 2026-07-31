@@ -246,14 +246,16 @@
             bindings = <&kp LBKT>;
             layers = <0>;
         };
-        combo_n {
+        combo_l_brace {
             key-positions = <7 9>;
             bindings = <&kp LBRC>;
             layers = <0>;
         };
-        combo_o {
+        combo_r_brace {
             key-positions = <12 14>;
             bindings = <&kp RBRC>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <33>;
             layers = <0>;
         };
         combo_g {
