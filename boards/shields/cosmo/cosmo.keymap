@@ -236,12 +236,14 @@
             bindings = <&kp UNDERSCORE>;
             layers = <0>;
         };
-        combo_l {
+        combo_r_bracket {
             key-positions = <12 15>;
             bindings = <&kp RBKT>;
+            require-prior-idle-ms = <50>;
+            timeout-ms = <33>;
             layers = <0>;
         };
-        combo_m {
+        combo_l_bracket {
             key-positions = <6 9>;
             bindings = <&kp LBKT>;
             layers = <0>;
