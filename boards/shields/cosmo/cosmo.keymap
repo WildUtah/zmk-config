@@ -357,6 +357,11 @@
             bindings = <&bootloader>;
             layers = <0>;
         };
+        combo_firmware_reloac_right {
+            key-positions = <3 4 5 19 20 21>;
+            bindings = <&bootloader>;
+            layers = <0>;
+        };
         combo_qu {
             key-positions = <3 5>;
             bindings = <&updownu>;
