@@ -108,7 +108,7 @@
                bindings = <&xmul>, <&kp RA(N8)>;
                mods = <(MOD_LSFT|MOD_RSFT)>;
            };
-      xmul: threemuls {
+      xmul: threemuls_aux {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
                bindings = <&kp STAR>, <&kp RC(RS(RA(X)))>;
