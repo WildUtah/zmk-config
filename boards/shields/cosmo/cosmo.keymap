@@ -46,20 +46,7 @@
       mt: mod_tap {
         quick-tap-ms = <450>;
           };
-          /*
-      tdy: tap_dance_y {
-               compatible = "zmk,behavior-tap-dance";
-               tapping-term-ms = <300>;
-               #binding-cells = <0>;
-               bindings = <&kp Y>, <&kp J>;
-           };
-      tdu: tap_dance_u {
-               compatible = "zmk,behavior-tap-dance";
-               tapping-term-ms = <300>;
-               #binding-cells = <0>;
-               bindings = <&kp U>, <&updownu>;
-           };
-           */
+
       updownu:updownu {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
@@ -72,6 +59,7 @@
                bindings = <&qu>, <&kp Q>;
                mods = <(MOD_LALT|MOD_RALT)>;
             };
+
       dashes: en_em_dash {
                compatible = "zmk,behavior-mod-morph";
                #binding-cells = <0>;
@@ -190,9 +178,17 @@
 
     combos { 
         compatible = "zmk,combos";
-        combo_a {
+        //
+        // home row TODO: timing adjustments, homerow mods?
+        //
+        combo_l_paren {
             key-positions = <7 8>;
             bindings = <&kp LPAR>;
+            layers = <0>;
+        };
+        combo_r_paren {
+            key-positions = <13 14>;
+            bindings = <&infinity_rp>;
             layers = <0>;
         };
         combo_b {
@@ -212,7 +208,7 @@
             bindings = <&quotebacktick>;
             layers = <0>;
         };
-        combo_e {
+        combo_equal {
             key-positions = <8 13>;
             bindings = <&almostequal>;
             layers = <0>;
@@ -222,24 +218,9 @@
             bindings = <&kp DQT>;
             layers = <0>;
         };
-        combo_h {
-            key-positions = <13 14>;
-            bindings = <&infinity_rp>;
-            layers = <0>;
-        };
         combo_i {
             key-positions = <14 15>;
             bindings = <&twodivides>;
-            layers = <0>;
-        };
-        combo_j {
-            key-positions = <20 21>;
-            bindings = <&questioninv>;
-            layers = <0>;
-        };
-        combo_k {
-            key-positions = <18 19>;
-            bindings = <&kp UNDERSCORE>;
             layers = <0>;
         };
         combo_r_bracket {
@@ -266,7 +247,7 @@
             timeout-ms = <33>;
             layers = <0>;
         };
-        combo_g {
+        combo_dash {
             key-positions = <12 13>;
             bindings = <&dashes>;
             require-prior-idle-ms = <50>;
@@ -278,9 +259,26 @@
             bindings = <&kp HASH>;
             layers = <0>;
         };
-        combo_q {
+        combo_percent_mil {
             key-positions = <8 14>;
             bindings = <&permilcent>;
+            layers = <0>;
+        };
+        combo_backslash {
+            key-positions = <6 15>;
+            bindings = <&kp BSLH>;
+            layers = <0>;
+        };
+
+
+        combo_question {
+            key-positions = <20 21>;
+            bindings = <&questioninv>;
+            layers = <0>;
+        };
+        combo_k {
+            key-positions = <18 19>;
+            bindings = <&kp UNDERSCORE>;
             layers = <0>;
         };
         combo_r {
@@ -318,17 +316,12 @@
             bindings = <&exclinv>;
             layers = <0>;
         };
-        combo_y {
+        combo_multiply {
             key-positions = <0 4>;
             bindings = <&starmul>;
             layers = <0>;
         };
-        combo_z {
-            key-positions = <6 15>;
-            bindings = <&kp BSLH>;
-            layers = <0>;
-        };
-        combo_aa {
+        combo_at {
             key-positions = <16 21>;
             bindings = <&kp AT>;
             layers = <0>;
@@ -338,11 +331,15 @@
             bindings = <&twodivides>;
             layers = <0>;
         };
-        combo_bb {
+        combo_dollar {
             key-positions = <16 17>;
             bindings = <&kp DOLLAR>;
             layers = <0>;
         };
+
+        //
+        //bluetooth and firmware controls
+        //
         combo_btsel {
             key-positions = <7 8 9 10>;
             bindings = <&bt BT_NXT>;
@@ -358,16 +355,20 @@
             bindings = <&bt BT_CLR>;
             layers = <0>;
         };
-        combo_firmware_reloac {
+        combo_firmware_reload {
             key-positions = <0 1 2 16 17 18 >;
             bindings = <&bootloader>;
             layers = <0>;
         };
-        combo_firmware_reloac_right {
+        combo_firmware_reload_right {
             key-positions = <3 4 5 19 20 21>;
             bindings = <&bootloader>;
             layers = <0>;
         };
+
+        //
+        // rare letters on combos
+        //
         combo_qu {
             key-positions = <3 5>;
             bindings = <&updownu>;
@@ -388,13 +389,23 @@
             bindings = <&kp X>;
             layers = <0>;
         };
-        combo_kk {
+        combo_xxx {
             key-positions = <3 4>;
             bindings = <&kp K>;
             layers = <0>;
         };
-        combo_vv {
+        combo_zzz {
             key-positions = <1 2>;
+            bindings = <&kp V>;
+            layers = <0>;
+        };
+        combo_kk {
+            key-positions = <19 21>;
+            bindings = <&kp K>;
+            layers = <0>;
+        };
+        combo_vv {
+            key-positions = <16 18>;
             bindings = <&kp V>;
             layers = <0>;
         };
@@ -408,6 +419,8 @@
             bindings = <&kp V>;
             layers = <0>;
         };
+        
+        //funny game
         combo_the {
             key-positions = <9 10>;
             bindings = <&the>;
