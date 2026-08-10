@@ -391,12 +391,12 @@
         };
         combo_xxx {
             key-positions = <3 4>;
-            bindings = <&kp K>;
+            bindings = <&kp X>;
             layers = <0>;
         };
         combo_zzz {
             key-positions = <1 2>;
-            bindings = <&kp V>;
+            bindings = <&kp Z>;
             layers = <0>;
         };
         combo_kk {
