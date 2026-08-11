@@ -351,7 +351,7 @@
             layers = <0>;
         };
         combo_btclr {
-            key-positions = <11 12 13 14 15>;
+            key-positions = <6 7 8 9 10>;
             bindings = <&bt BT_CLR>;
             layers = <0>;
         };
