@@ -199,7 +199,7 @@
         combo_c {
             key-positions = <8 9>;
             bindings = <&plusminus>;
-            require-prior-idle-ms = <50>;
+            require-prior-idle-ms = <55>;
             timeout-ms = <33>;
             layers = <0>;
         };
@@ -216,11 +216,6 @@
         combo_f {
             key-positions = <9 12>;
             bindings = <&kp DQT>;
-            layers = <0>;
-        };
-        combo_i {
-            key-positions = <14 15>;
-            bindings = <&twodivides>;
             layers = <0>;
         };
         combo_r_bracket {
@@ -243,8 +238,8 @@
         combo_r_brace {
             key-positions = <12 14>;
             bindings = <&kp RBRC>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <33>;
+            require-prior-idle-ms = <70>;
+            timeout-ms = <30>;
             layers = <0>;
         };
         combo_dash {
@@ -446,7 +441,7 @@
                 &kp HOME &kp UP &kp END   &kp KP_N7 &kp KP_N8 &kp KP_N9
                 &trans  &kp LEFT &kp DOWN &kp RIGHT &kp LG(LC(LS(N4))) &separators &kp KP_N4 &kp KP_N5 &kp KP_N6 &zero_degrees
                 &kp RG(RC(SPACE)) &kp K_APP &kp LG(SPACE) &kp KP_N1 &kp KP_N2 &kp KP_N3
-                &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans
             >;
         };
     };
