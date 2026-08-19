@@ -191,7 +191,7 @@
             bindings = <&infinity_rp>;
             layers = <0>;
         };
-        combo_b {
+        combo_tab {
             key-positions = <7 8 9>;
             bindings = <&kp TAB>;
             layers = <0>;
@@ -249,7 +249,7 @@
             timeout-ms = <35>;
             layers = <0>;
         };
-        combo_p {
+        combo_hash {
             key-positions = <7 13>;
             bindings = <&kp HASH>;
             layers = <0>;
@@ -271,7 +271,7 @@
             bindings = <&questioninv>;
             layers = <0>;
         };
-        combo_k {
+        combo_underscore {
             key-positions = <18 19>;
             bindings = <&kp UNDERSCORE>;
             layers = <0>;
@@ -286,7 +286,7 @@
             bindings = <&gt_gtq>;
             layers = <0>;
         };
-        combo_t {
+        combo_colon {
             key-positions = <17 18>;
             bindings = <&kp COLON>;
             layers = <0>;
@@ -296,17 +296,17 @@
             bindings = <&kp SEMI>;
             layers = <0>;
         };
-        combo_v {
+        combo_ampersand {
             key-positions = <1 4>;
             bindings = <&and_section>;
             layers = <0>;
         };
-        combo_w {
+        combo_pipe {
             key-positions = <0 5>;
             bindings = <&kp PIPE>;
             layers = <0>;
         };
-        combo_x {
+        combo_exclam {
             key-positions = <1 5>;
             bindings = <&exclinv>;
             layers = <0>;
@@ -321,7 +321,7 @@
             bindings = <&kp AT>;
             layers = <0>;
         };
-        combo_aas {
+        combo_slash {
             key-positions = <17 20>;
             bindings = <&twodivides>;
             layers = <0>;
@@ -369,7 +369,7 @@
             bindings = <&updownu>;
             layers = <0>;
         };
-        combo_jj {
+        combo_j {
             key-positions = <0 2>;
             bindings = <&kp J>;
             layers = <0>;
@@ -384,32 +384,36 @@
             bindings = <&kp X>;
             layers = <0>;
         };
-        combo_xxx {
+        combo_x {
             key-positions = <3 4>;
             bindings = <&kp X>;
             layers = <0>;
         };
-        combo_zzz {
+        combo_z {
             key-positions = <1 2>;
             bindings = <&kp Z>;
             layers = <0>;
         };
-        combo_kk {
+        combo_k {
             key-positions = <19 21>;
             bindings = <&kp K>;
+            timeout-ms = <66>;
             layers = <0>;
         };
-        combo_vv {
+        combo_v {
             key-positions = <16 18>;
             bindings = <&kp V>;
+            timeout-ms = <77>;
             layers = <0>;
         };
         combo_kkk {
+          //flat index
             key-positions = <12 19>;
             bindings = <&kp K>;
             layers = <0>;
         };
         combo_vvv {
+          //flat index
             key-positions = <9 18>;
             bindings = <&kp V>;
             layers = <0>;
