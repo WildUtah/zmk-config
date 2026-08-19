@@ -287,7 +287,7 @@
             bindings = <&kp COLON>;
             layers = <0>;
         };
-        combo_u {
+        combo_semicolon {
             key-positions = <19 20>;
             bindings = <&kp SEMI>;
             layers = <0>;
@@ -319,6 +319,11 @@
         };
         combo_slash {
             key-positions = <17 20>;
+            bindings = <&twodivides>;
+            layers = <0>;
+        };
+        combo_topslash {
+            key-positions = <2 3>;
             bindings = <&twodivides>;
             layers = <0>;
         };
@@ -378,18 +383,6 @@
         //combo_xx {
         //    key-positions = <12 18>;
         //    bindings = <&kp X>;
-        //    layers = <0>;
-        //};
-        //combo_kkk {
-        //  //flat index
-        //    key-positions = <12 19>;
-        //    bindings = <&kp K>;
-        //    layers = <0>;
-        //};
-        //combo_vvv {
-        //  //flat index
-        //    key-positions = <9 18>;
-        //    bindings = <&kp V>;
         //    layers = <0>;
         //};
         combo_x {
