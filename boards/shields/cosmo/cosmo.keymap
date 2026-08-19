@@ -1,13 +1,8 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more instructions.
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    // Define a default keymap here.
-    // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
     
     macros {
       qu:qu {
@@ -41,6 +36,7 @@
       lt: layer_tap {
             flavor = "balanced";
             tapping-term-ms = <200>;
+            require-prior-idle-ms = <40>;
             retro-tap;
           };
       mt: mod_tap {
@@ -374,24 +370,38 @@
             bindings = <&kp J>;
             layers = <0>;
         };
-        combo_zz {
-            key-positions = <9 19>;
-            bindings = <&kp Z>;
-            layers = <0>;
-        };
-        combo_xx {
-            key-positions = <12 18>;
-            bindings = <&kp X>;
-            layers = <0>;
-        };
+        //combo_zz {
+        //    key-positions = <9 19>;
+        //    bindings = <&kp Z>;
+        //    layers = <0>;
+        //};
+        //combo_xx {
+        //    key-positions = <12 18>;
+        //    bindings = <&kp X>;
+        //    layers = <0>;
+        //};
+        //combo_kkk {
+        //  //flat index
+        //    key-positions = <12 19>;
+        //    bindings = <&kp K>;
+        //    layers = <0>;
+        //};
+        //combo_vvv {
+        //  //flat index
+        //    key-positions = <9 18>;
+        //    bindings = <&kp V>;
+        //    layers = <0>;
+        //};
         combo_x {
             key-positions = <3 4>;
             bindings = <&kp X>;
+            timeout-ms = <77>;
             layers = <0>;
         };
         combo_z {
             key-positions = <1 2>;
             bindings = <&kp Z>;
+            timeout-ms = <77>;
             layers = <0>;
         };
         combo_k {
@@ -404,18 +414,6 @@
             key-positions = <16 18>;
             bindings = <&kp V>;
             timeout-ms = <77>;
-            layers = <0>;
-        };
-        combo_kkk {
-          //flat index
-            key-positions = <12 19>;
-            bindings = <&kp K>;
-            layers = <0>;
-        };
-        combo_vvv {
-          //flat index
-            key-positions = <9 18>;
-            bindings = <&kp V>;
             layers = <0>;
         };
         
