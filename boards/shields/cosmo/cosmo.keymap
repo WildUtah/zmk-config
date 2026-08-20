@@ -363,11 +363,11 @@
         };
 
         //studio
-        combo_studio {
-            key-positions = <0 7 16>;
-            bindings = <&studio_unlock>;
-            layers = <0>;
-        };
+        //combo_studio {
+        //    key-positions = <0 7 16>;
+        //    bindings = <&studio_unlock>;
+        //    layers = <0>;
+        //};
 
         //
         // rare letters on combos
