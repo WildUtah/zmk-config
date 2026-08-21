@@ -199,9 +199,10 @@
             timeout-ms = <33>;
             layers = <0>;
         };
-        combo_d {
+        combo_quote {
             key-positions = <7 14>;
             bindings = <&quotebacktick>;
+            timeout-ms = <73>;
             layers = <0>;
         };
         combo_equal {
@@ -234,15 +235,15 @@
         combo_r_brace {
             key-positions = <12 14>;
             bindings = <&kp RBRC>;
-            require-prior-idle-ms = <70>;
+            require-prior-idle-ms = <88>;
             timeout-ms = <30>;
             layers = <0>;
         };
         combo_dash {
             key-positions = <12 13>;
             bindings = <&dashes>;
-            require-prior-idle-ms = <50>;
-            timeout-ms = <35>;
+            require-prior-idle-ms = <80>;
+            timeout-ms = <49>;
             layers = <0>;
         };
         combo_hash {
