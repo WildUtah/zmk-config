@@ -22,13 +22,6 @@
                  , <&macro_tap &kp U>
                  ;
          };
-      the:the {
-             compatible = "zmk,behavior-macro";
-             #binding-cells = <0>;
-             bindings
-                 = <&macro_tap &kp T &kp H &kp E>
-                 ;
-         };
 
     };
 
@@ -383,16 +376,6 @@
             bindings = <&kp J>;
             layers = <0>;
         };
-        //combo_zz {
-        //    key-positions = <9 19>;
-        //    bindings = <&kp Z>;
-        //    layers = <0>;
-        //};
-        //combo_xx {
-        //    key-positions = <12 18>;
-        //    bindings = <&kp X>;
-        //    layers = <0>;
-        //};
         combo_x {
             key-positions = <3 4>;
             bindings = <&kp X>;
@@ -418,12 +401,6 @@
             layers = <0>;
         };
         
-        //funny game
-        combo_the {
-            key-positions = <9 10>;
-            bindings = <&the>;
-            layers = <0>;
-        };
     };
 
     keymap {
@@ -435,7 +412,7 @@
                 &kp W &kp F &kp P   &kp L &kp U &kp Y
                 &lt 1 A  &kp R &kp S &kp T &kp G &kp M &kp N &kp E &kp I &kp O
                 &kp B &kp C &kp D &kp H &commatwiddle &dotupper 
-                &mt LALT ESC &mt LSHIFT BSPC &mt LCTRL SPACE &mt LGUI RET
+                &mt LSHIFT ESC &mt LALT BSPC &mt LCTRL SPACE &mt LGUI RET
             >;
         };
         numpad_layer {
