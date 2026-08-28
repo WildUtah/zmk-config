@@ -235,8 +235,8 @@
         combo_dash {
             key-positions = <12 13>;
             bindings = <&dashes>;
-            require-prior-idle-ms = <80>;
-            timeout-ms = <49>;
+            require-prior-idle-ms = <83>;
+            timeout-ms = <53>;
             layers = <0>;
         };
         combo_hash {
