@@ -30,7 +30,7 @@
             flavor = "balanced";
             tapping-term-ms = <200>;
             require-prior-idle-ms = <90>;
-            retro-tap;
+            //retro-tap;
           };
       mt: mod_tap {
         quick-tap-ms = <450>;
